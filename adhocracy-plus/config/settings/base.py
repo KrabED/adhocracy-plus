@@ -172,10 +172,16 @@ WSGI_APPLICATION = "adhocracy-plus.config.wsgi.application"
 import os
 import dj_database_url
 
+# Allow Render's domain
+ALLOWED_HOSTS = ["https://adhocracy-plus-1kge.onrender.com", "localhost"]
+
+# Configure the database for Render
 DATABASES = {
-    'default': dj_database_url.config(default=os.environ.get("DATABASE_URL"))
+    "default": dj_database_url.config(default=os.environ.get("DATABASE_URL"))
 }
 
+# Set Debug mode off for production
+DEBUG = os.environ.get("DEBUG", "False") == "True"
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
@@ -222,10 +228,10 @@ PARLER_ENABLE_CACHING = False
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATICFILES_DIRS = [
-    os.path.join(PROJECT_DIR, "static"),
+    os.path.join(PROJECT_DIR, "staticfiles"),
 ]
 
-STATIC_ROOT = os.path.join(BASE_DIR, "static")
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 STATIC_URL = "/static/"
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
