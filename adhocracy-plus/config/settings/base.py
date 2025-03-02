@@ -169,16 +169,12 @@ WSGI_APPLICATION = "adhocracy-plus.config.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
-        "TEST": {
-            "NAME": os.path.join(BASE_DIR, "test_db.sqlite3"),
-        },
-    }
-}
+import os
+import dj_database_url
 
+DATABASES = {
+    'default': dj_database_url.config(default=os.environ.get("DATABASE_URL"))
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
