@@ -14,3 +14,5 @@ import dj_database_url
 DATABASES = {
     'default': dj_database_url.config(default=os.environ.get("DATABASE_URL"))
 }
+import django_on_heroku
+django_on_heroku.settings(locals())  # Automatically configures for deployment
