@@ -1,1 +1,1 @@
-web: gunicorn myproject.wsgi:application --bind 0.0.0.0:$PORT
+web: gunicorn src.adhocracy_plus.wsgi:application --chdir src --bind 0.0.0.0:$PORT
