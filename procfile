@@ -1,1 +1,1 @@
-web: gunicorn src.adhocracy_plus.wsgi:application --chdir src --bind 0.0.0.0:$PORT
+web: python manage.py migrate && gunicorn adhocracy_plus.wsgi:application --bind 0.0.0.0:$PORT
