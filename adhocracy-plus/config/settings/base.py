@@ -19,9 +19,6 @@ BASE_DIR = os.path.dirname(PROJECT_DIR)
 # General settings
 CONTACT_EMAIL = "contact@domain"
 
-import django_on_heroku
-django_on_heroku.settings(locals())
-
 # Link to a dokuwiki instance containing a manual for aplus
 # Leave blank to disable
 APLUS_MANUAL_URL = ""
