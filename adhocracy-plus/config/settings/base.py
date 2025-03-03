@@ -7,12 +7,20 @@ from datetime import timedelta
 from django.conf import locale
 from django.utils.translation import gettext_lazy as _
 
+import os
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+
 CONFIG_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PROJECT_DIR = os.path.dirname(CONFIG_DIR)
 BASE_DIR = os.path.dirname(PROJECT_DIR)
 
 # General settings
 CONTACT_EMAIL = "contact@domain"
+
+import django_on_heroku
+django_on_heroku.settings(locals())
 
 # Link to a dokuwiki instance containing a manual for aplus
 # Leave blank to disable
