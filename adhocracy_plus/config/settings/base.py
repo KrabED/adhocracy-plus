@@ -447,6 +447,9 @@ BLEACH_LIST = {
 # Wagtail
 WAGTAIL_SITE_NAME = "adhocracy+"
 WAGTAILIMAGES_IMAGE_MODEL = "a4_candy_cms_images.CustomImage"
+WAGTAILADMIN_BASE_URL = os.getenv('WAGTAILADMIN_BASE_URL', 'http://localhost:8000')
+
+
 
 # adhocracy4
 
