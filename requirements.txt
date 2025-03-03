@@ -1,4 +1,3 @@
 -r requirements/prod.txt
 gunicorn
 dj-database-url
-django-on-heroku
