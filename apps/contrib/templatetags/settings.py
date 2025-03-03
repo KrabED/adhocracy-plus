@@ -15,3 +15,5 @@ DATABASES = {
     'default': dj_database_url.config(default=os.environ.get("DATABASE_URL"))
 }
 
+
+WSGI_APPLICATION = 'adhocracy_plus.wsgi.application'
